@@ -8,10 +8,30 @@
 <body>
     <div id="controls-wrapper">
         <button id="btn-up" class="btn-arrow">U</button><br/>
-        <button id="btn-left" class="btn-arrow">L</button><button id="btn-right" class="btn-arrow">R</button><br/>
+        <button id="btn-left" class="btn-arrow">L</button>
+        <button id="btn-right" class="btn-arrow">R</button><br/>
         <button id="btn-down" class="btn-arrow">D</button>
     </div>
     <div id="piece" class="circle"></div>
+    <button onclick="location.reload()">Reset</button>
+    <input id="btn-random" type="button" value="Randomize"
+           onclick="randomPosition()"
+    />
+<script>
+    function randomPosition() {
+    let x = 0;
+    while(x <= 0) {
+        x = Math.floor((Math.random() * document.documentElement.clientWidth) - 100);
+    }
+    let y = 0;
+    while (y <= 0) {
+        y = Math.floor((Math.random() * document.documentElement.clientHeight) - 100);
+    }
+        console.log(x, y);
+    this.piece.style.left = `${x}px`;
+    this.piece.style.top = `${y}px`;
+}
+</script>
     <script src="js/scripts.js"></script>
 </body>
 </html>
